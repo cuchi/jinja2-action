@@ -1,7 +1,7 @@
 name: 'Jinja2'
 description: 'Use the Jinja2 templating engine'
 inputs:
-  template: 
+  template:
     required: true
   output_file:
     required: true
@@ -13,3 +13,6 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+branding:
+  icon: 'sliders'
+  color: 'red'
