@@ -1,0 +1,13 @@
+name: 'Jinja2'
+description: 'Use the Jinja2 templating engine'
+inputs:
+  template: 
+    required: true
+  output:
+    required: true
+  strict:
+    required: false
+    default: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
