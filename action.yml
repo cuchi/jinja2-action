@@ -3,11 +3,13 @@ description: 'Use the Jinja2 templating engine'
 inputs:
   template: 
     required: true
-  output:
+  output_file:
     required: true
   strict:
     required: false
     default: false
+  variables:
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
