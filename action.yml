@@ -1,4 +1,4 @@
-name: 'Jinja2'
+name: 'Jinja2 Action'
 description: 'Use the Jinja2 templating engine'
 inputs:
   template:
