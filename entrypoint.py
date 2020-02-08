@@ -4,20 +4,16 @@ import os
 import re
 import subprocess
 
-flags = []
+params = [os.environ['INPUT_TEMPLATE']]
 
-variables = re.compile('\n+', re.MULTILINE).sub(
-    ',',
-    os.environ['INPUT_VARIABLES']
-)
+for variable in os.environ.get('INPUT_VARIABLES', '').split('\n'):
+    clean_variable = variable.strip()
+    if clean_variable != '':
+        params.extend(['-D', clean_variable])
 
 if os.environ.get('INPUT_STRICT') == 'true':
-    flags.append('--strict')
+    params.append('--strict')
 
-flags.extend([
-    os.environ['INPUT_TEMPLATE'],
-    '-D', variables,
-    '-o', os.environ['INPUT_OUTPUT_FILE']
-])
+params.extend(['-o', os.environ['INPUT_OUTPUT_FILE']])
 
-subprocess.run(['jinja2'] + flags)
+subprocess.run(['jinja2'] + params)
