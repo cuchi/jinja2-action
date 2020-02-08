@@ -1,0 +1,21 @@
+name: Continuous integration
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout VCS
+        uses: actions/checkout@v1
+
+      - name: '[run] simple'
+        uses: ./
+        with:
+          template: test/simple/template
+          output_file: test/simple/result
+          variables: foo=baz
+      - name: '[test] simple'
+        run: diff test/simple/result test/simple/expected
