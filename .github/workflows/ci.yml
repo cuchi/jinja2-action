@@ -1,0 +1,46 @@
+name: Continuous integration
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout VCS
+        uses: actions/checkout@v1
+
+      - name: '[run] simple'
+        uses: ./
+        with:
+          template: test/simple/template
+          output_file: test/simple/result
+          variables: foo=bar
+      - name: '[test] simple'
+        run: diff test/simple/result test/simple/expected
+
+      - name: '[run] many variables'
+        uses: ./
+        with:
+          template: test/many-variables/template
+          output_file: test/many-variables/result
+          variables: |
+            foo=bar
+            baz=cux
+      - name: '[test] many variables'
+        run: diff test/many-variables/result test/many-variables/expected
+
+      - name: '[run] many variables (messy whitespace)'
+        uses: ./
+        with:
+          template: test/many-variables/template
+          output_file: test/many-variables/result
+          variables: |
+            foo=bar
+                baz=cux
+                
+                
+                    
+      - name: '[test] many variables (messy whitespace)'
+        run: diff test/many-variables/result test/many-variables/expected
