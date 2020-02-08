@@ -31,16 +31,27 @@ jobs:
       - name: '[test] many variables'
         run: diff test/many-variables/result test/many-variables/expected
 
-      - name: '[run] many variables (messy whitespace)'
+      - name: '[run] many variables declared with messy whitespace'
         uses: ./
         with:
           template: test/many-variables/template
           output_file: test/many-variables/result
           variables: |
-            foo=bar
-                baz=cux
+            foo=bar                             
+                baz=cux                  
                 
                 
                     
-      - name: '[test] many variables (messy whitespace)'
+      - name: '[test] many variables declared with messy whitespace'
         run: diff test/many-variables/result test/many-variables/expected
+
+      - name: '[run] many variables with messy whitespace'
+        uses: ./
+        with:
+          template: test/whitespace/template
+          output_file: test/whitespace/result
+          variables: |
+            foo=this variable has whitespace but it only takes one line
+            bar= \nthis\nvariable\nhas\nmany\n    \nlines\n    and trailing whitespace    
+      - name: '[test] many variables with messy whitespace'
+        run: diff test/whitespace/result test/whitespace/expected

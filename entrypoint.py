@@ -7,7 +7,7 @@ import subprocess
 params = [os.environ['INPUT_TEMPLATE']]
 
 for variable in os.environ.get('INPUT_VARIABLES', '').split('\n'):
-    clean_variable = variable.strip()
+    clean_variable = bytes(variable.strip(), 'utf-8').decode('unicode_escape')
     if clean_variable != '':
         params.extend(['-D', clean_variable])
 

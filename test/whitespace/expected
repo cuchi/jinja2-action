@@ -1,0 +1,10 @@
+
+this variable has whitespace but it only takes one line
+ 
+this
+variable
+has
+many
+    
+lines
+    and trailing whitespace
