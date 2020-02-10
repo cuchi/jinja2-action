@@ -1,0 +1,23 @@
+name: Experiment
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout VCS
+        uses: actions/checkout@v1
+
+      - name: '[run] many variables'
+        uses: ./
+        with:
+          template: test/many-variables/template
+          output_file: test/many-variables/result
+          variables:
+            foo: bar
+            baz: cux
+      - name: '[test] many variables'
+        run: diff test/many-variables/result test/many-variables/expected

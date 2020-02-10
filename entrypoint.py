@@ -4,6 +4,10 @@ import os
 import re
 import subprocess
 
+print(os.environ.get('INPUT_VARIABLES', ''))
+
+raise SystemExit
+
 params = [os.environ['INPUT_TEMPLATE']]
 
 for variable in os.environ.get('INPUT_VARIABLES', '').split('\n'):
