@@ -9,7 +9,7 @@ You can use this action to easily run the [Jinja2 CLI](https://github.com/mattro
 # Example
 ```yml
 - name: Setup nginx
-  uses: cuchi/jinja2-action@v1
+  uses: cuchi/jinja2-action@v1.0.1
   with:
     template: infra/nginx.conf.j2
     output_file: infra/nginx.conf
