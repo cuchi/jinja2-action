@@ -9,7 +9,9 @@ inputs:
     required: false
     default: false
   variables:
-    required: true
+    required: false
+  data_file:
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
