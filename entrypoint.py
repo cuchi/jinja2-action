@@ -16,4 +16,6 @@ if os.environ.get('INPUT_STRICT') == 'true':
 
 params.extend(['-o', os.environ['INPUT_OUTPUT_FILE']])
 
-subprocess.run(['jinja2'] + params)
+params.extend([os.environ.get('INPUT_DATA_FILE','')])
+
+subprocess.run(['jinja2'] + params, check = True)
