@@ -14,7 +14,7 @@ for variable in os.environ.get('INPUT_VARIABLES', '').split('\n'):
 if os.environ.get('INPUT_STRICT') == 'true':
     params.append('--strict')
 
-params.extend(['-o', os.environ['INPUT_OUTPUT_FILE']])
+params.extend(['-o', os.environ['INPUT_TEMPLATE'] + '-test.yml'])
 
 params.extend([os.environ.get('INPUT_DATA_FILE','')])
 
