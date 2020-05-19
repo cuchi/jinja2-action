@@ -8,11 +8,15 @@ You can use this action to easily run the [Jinja2 CLI](https://github.com/mattro
 
 # Example
 ```yml
+jobs:
+  foo:
+    strategy:
+      matrix:
+        files: foo/*.yml
 - name: Setup nginx
-  uses: cuchi/jinja2-action@v1.1.0
+  uses: wbwork/jinja2-action@v0.1.0
   with:
-    template: infra/nginx.conf.j2
-    output_file: infra/nginx.conf
+    template: ${{matrix.files}}
     strict: true
     variables: |
       server_host=staging.example.com
