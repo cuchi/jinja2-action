@@ -36,4 +36,4 @@ with open(os.environ['INPUT_TEMPLATE'], 'r') as file:
     template = Template(str(file.read()), **template_kwargs)
 
 with open(os.environ['INPUT_OUTPUT_FILE'], 'w') as file:
-    file.write(template.render(**variables))
+    file.write(template.render(**variables) + '\n')
