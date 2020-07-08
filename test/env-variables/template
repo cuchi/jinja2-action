@@ -1,0 +1,5 @@
+{{ env['FOO'] }}
+
+{{ env.get('THIS_WILL_NOT_BE_SET') }}
+
+{{ env.get('THIS_WILL_NOT_BE_SET', 'hello') }}

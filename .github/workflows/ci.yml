@@ -91,3 +91,13 @@ jobs:
           data_file: test/data-files/data.yml
       - name: '[test] env data file'
         run: diff test/data-files/env-result test/many-variables/expected
+
+      - name: '[run] env variables'
+        uses: ./
+        with:
+          template: test/env-variables/template
+          output_file: test/env-variables/result
+        env:
+          FOO: bar
+      - name: '[test] env variables'
+        run: diff test/env-variables/result test/env-variables/expected
