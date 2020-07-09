@@ -1,17 +1,23 @@
 name: 'Jinja2 Action'
-description: 'Use the Jinja2 templating engine'
+description: 'Use the Jinja2 templating engine on your workflow'
 inputs:
   template:
     required: true
   output_file:
     required: true
   strict:
+    description: 'Fails on missing values'
     required: false
     default: false
   variables:
     required: false
   data_file:
+    description: 'See "data_format" for supported formats'
     required: false
+  data_format:
+    description: 'To be used with the "data_file" input, can be one of: env, ini, yaml or json'
+    required: false
+    default: yaml
 runs:
   using: 'docker'
   image: 'Dockerfile'
