@@ -8,7 +8,7 @@ to easily run it in your GitHub workflows.
 # Using input variables
 ```yml
 - name: Setup nginx
-  uses: cuchi/jinja2-action@v1.2.0
+  uses: cuchi/jinja2-action@v.1.2.0
   with:
     template: infra/nginx.conf.j2
     output_file: infra/nginx.conf
@@ -21,7 +21,7 @@ to easily run it in your GitHub workflows.
 # Using data files
 ```yml
 - name: Setup nginx
-  uses: cuchi/jinja2-action@v1.2.0
+  uses: cuchi/jinja2-action@v.1.2.0
   with:
     template: infra/nginx.conf.j2
     output_file: infra/nginx.conf
@@ -32,7 +32,7 @@ to easily run it in your GitHub workflows.
 # Using environment variables
 ```yml
 - name: Setup nginx
-  uses: cuchi/jinja2-action@v1.2.0
+  uses: cuchi/jinja2-action@v.1.2.0
   with:
     template: infra/nginx.conf.j2
     output_file: infra/nginx.conf
