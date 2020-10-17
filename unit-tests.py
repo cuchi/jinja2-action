@@ -1,3 +1,7 @@
 import unittest
 
-# TODO: Tests.
+class TestContext(unittest.TestCase):
+    pass
+    
+if __name__ == '__main__':
+    unittest.main()
