@@ -17,5 +17,7 @@ homepage = "https://github.com/cuchi/jinja2-action"
 keywords = ['jinja2']
 
 [tool.poetry.dependencies]
+python = ">=3.5.0"
 j2cli = "0.3.10"
-pyyaml = { version = "5.3.1", python = ">=3.5.0" }
+pyyaml = "5.3.1"
+Jinja2 = "^2.11.2"

@@ -14,11 +14,11 @@ yaml = ["pyyaml (>=3.10)"]
 
 [[package]]
 name = "jinja2"
-version = "2.10.3"
+version = "2.11.2"
 description = "A very fast and expressive template engine."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [package.dependencies]
 MarkupSafe = ">=0.23"
@@ -44,8 +44,8 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [metadata]
 lock-version = "1.1"
-python-versions = "*"
-content-hash = "2e5c1ade8c8fc3f5c2db81fe1cc1cf565fc7f3f64599a9c9b0ee593919cc6c2e"
+python-versions = ">=3.5.0"
+content-hash = "3bd327f71611be489b9b8d8d44968714b42e4f55f58d87c8c8e96aaecf0fd5fd"
 
 [metadata.files]
 j2cli = [
@@ -53,8 +53,8 @@ j2cli = [
     {file = "j2cli-0.3.10.tar.gz", hash = "sha256:6f6f643b3fa5c0f72fbe9f07e246f8e138052b9f689e14c7c64d582c59709ae4"},
 ]
 jinja2 = [
-    {file = "Jinja2-2.10.3-py2.py3-none-any.whl", hash = "sha256:74320bb91f31270f9551d46522e33af46a80c3d619f4a4bf42b3164d30b5911f"},
-    {file = "Jinja2-2.10.3.tar.gz", hash = "sha256:9fe95f19286cfefaa917656583d020be14e7859c6b0252588391e47db34527de"},
+    {file = "Jinja2-2.11.2-py2.py3-none-any.whl", hash = "sha256:f0a4641d3cf955324a89c04f3d94663aa4d638abe8f733ecd3582848e1c37035"},
+    {file = "Jinja2-2.11.2.tar.gz", hash = "sha256:89aab215427ef59c34ad58735269eb58b1a5808103067f7bb9d5836c651b3bb0"},
 ]
 markupsafe = [
     {file = "MarkupSafe-1.1.1-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:09027a7803a62ca78792ad89403b1b7a73a01c8cb65909cd876f7fcebd79b161"},
