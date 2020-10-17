@@ -24,7 +24,6 @@ class Context:
             with open(data_file, 'r') as file:
                 self._variables.update(read_context_data(format, file, None))
 
-
     def _guess_format(file_name):
         _, extension = os.path.splitext(file_name)
         formats = {
@@ -35,7 +34,6 @@ class Context:
             '.env': 'env',
         }
         return formats.get(extension, 'env')
-
 
 def main(environ):
     context = Context(environ)
