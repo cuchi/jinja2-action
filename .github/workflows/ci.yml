@@ -11,6 +11,9 @@ jobs:
       - name: Checkout VCS
         uses: actions/checkout@v1
 
+      - name: 'Unit tests'
+        run: python unit-tests.py
+
       - name: '[run] simple'
         uses: ./
         with:
