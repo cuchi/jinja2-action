@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "jinja2-action"
+version = "0.1.0"
+description = "Use the Jinja2 template engine as a GitHub action"
+
+license = "Apache2"
+
+authors = [
+    "Paulo Henrique Cuchi <paulo@cuchi.me>"
+]
+
+readme = 'README.md'
+
+repository = "https://github.com/cuchi/jinja2-action"
+homepage = "https://github.com/cuchi/jinja2-action"
+
+keywords = ['jinja2']
+
+[tool.poetry.dependencies]
+j2cli = "0.3.10"
+pyyaml = { version = "5.3.1", python = ">=3.5.0" }

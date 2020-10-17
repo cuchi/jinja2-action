@@ -1,8 +1,8 @@
-FROM dinutac/jinja2docker:2.1.3
+FROM python:3
 
-RUN pip install \
-    j2cli==0.3.10 \
-    pyyaml==5.3.1
+RUN pip install poetry
+COPY poetry.lock pyproject.toml /
+RUN poetry install
 
 COPY entrypoint.py /entrypoint.py
 
