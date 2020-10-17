@@ -1,6 +1,6 @@
 import os
 from j2cli.context import read_context_data
-
+from jinja2 import Template, StrictUndefined
 
 class Context:
     def __init__(self, environ):
@@ -24,6 +24,18 @@ class Context:
             with open(data_file, 'r') as file:
                 self._variables.update(read_context_data(format, file, None))
 
+
+    def render_template(self):
+        with open(self._environ['INPUT_TEMPLATE'], 'r') as file:
+            template_kwargs = {}
+            if self._environ.get('INPUT_STRICT') == 'true':
+                template_kwargs.update({'undefined': StrictUndefined})
+            template = Template(str(file.read()), **template_kwargs)
+
+        with open(self._environ['INPUT_OUTPUT_FILE'], 'w') as file:
+            file.write(template.render(**self._variables) + '\n')
+
+
     def _guess_format(file_name):
         _, extension = os.path.splitext(file_name)
         formats = {
@@ -35,8 +47,3 @@ class Context:
         }
         return formats.get(extension, 'env')
 
-def main(environ):
-    context = Context(environ)
-    context.load_from_env()
-    context.load_from_input()
-    context.load_from_data_file()
