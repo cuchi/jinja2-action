@@ -8,3 +8,6 @@ class GitHubActionsInput(str, Enum):
     STRICT = 'INPUT_STRICT'
     TEMPLATE = 'INPUT_TEMPLATE'
     VARIABLES = 'INPUT_VARIABLES'
+
+    def __str__(self):
+        return self.value
