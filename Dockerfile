@@ -7,6 +7,6 @@ RUN poetry config virtualenvs.create false
 COPY poetry.lock pyproject.toml ./
 RUN poetry install
 
-COPY entrypoint.py ./entrypoint.py
+COPY . ./
 
 ENTRYPOINT ["./entrypoint.py"]

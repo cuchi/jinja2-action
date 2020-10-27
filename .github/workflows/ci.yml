@@ -11,6 +11,11 @@ jobs:
       - name: Checkout VCS
         uses: actions/checkout@v1
 
+      - name: 'Unit tests'
+        run: |
+          docker build --tag tests .
+          docker run --entrypoint python tests unit-tests.py
+
       - name: '[run] simple'
         uses: ./
         with:
